@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "CareerCraft Resume Analyzer"
+description = "A resume analyzer that lets job seekers upload a PDF resume and discover ranked job matches based on their skills and experience."
+version = "1.0.0"
+id = "artifacts/careercraft"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18324
+
+[services.development]
+run = "pnpm --filter @workspace/careercraft run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/careercraft", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/careercraft/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18324"
+BASE_PATH = "/"

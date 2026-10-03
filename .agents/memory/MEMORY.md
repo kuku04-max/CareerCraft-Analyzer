@@ -1,0 +1,1 @@
+- [Workspace package installs](workspace-package-installs.md) — the generic package installer targets the monorepo root; scope dependency installation to the artifact.
