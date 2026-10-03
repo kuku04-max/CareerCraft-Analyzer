@@ -1,0 +1,1 @@
+{"buildCommand":"cd artifacts/careercraft && pnpm install && pnpm run build","outputDirectory":"artifacts/careercraft/dist","framework":"vite","installCommand":"pnpm install"}
